@@ -1,11 +1,12 @@
 @import "tailwindcss";
 
 @theme {
-  /* Premium SaaS Colors */
-  --color-background: #09090B;
-  --color-secondary: #111827;
-  --color-primary: #7c3aed; /* Violet/Purple */
-  --color-primary-foreground: #FAFAFA;
+  /* Natural Hand-Coded SaaS Colors (Slate) */
+  --color-background: #0f172a; /* slate-900 */
+  --color-card: #1e293b; /* slate-800 */
+  --color-secondary: #334155; /* slate-700 */
+  --color-primary: #2563eb; /* blue-600 */
+  --color-primary-foreground: #ffffff;
   
   --color-accent-purple: #8b5cf6;
   --color-accent-blue: #3b82f6;
@@ -17,13 +18,12 @@
   --color-error: #ef4444;
 
   /* Text Colors */
-  --color-text-primary: #FAFAFA;
-  --color-text-secondary: #9CA3AF;
-  --color-text-tertiary: #52525b;
+  --color-text-primary: #f8fafc; /* slate-50 */
+  --color-text-secondary: #94a3b8; /* slate-400 */
+  --color-text-tertiary: #64748b; /* slate-500 */
 
-  /* Card & Borders */
-  --color-card: #18181B;
-  --color-border: rgba(255, 255, 255, 0.08); /* Slightly more visible than 0.06 for definition */
+  /* Borders */
+  --color-border: #334155; /* slate-700 */
 
   /* Border Radius */
   --radius-default: 12px;
@@ -51,4 +51,9 @@
   .backface-hidden {
     backface-visibility: hidden;
   }
+}
+
+/* Hide Next.js Dev Overlay */
+nextjs-portal {
+  display: none !important;
 }
