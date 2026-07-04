@@ -43,12 +43,12 @@ Modern students are overwhelmed by disjointed tools—using one app for notes, a
 ## 🚀 Live Demo
 
 <!-- Placeholder for Vercel Link -->
-[View Live Demo](#)
+[View Live Demo](study-flow-blond-alpha.vercel.app)
 
 ## 💻 GitHub Repository
 
 <!-- Placeholder for GitHub Link -->
-[View Source Code](#)
+[View Source Code](https://github.com/SuhaniKaushal/studyFlow)
 
 ---
 
