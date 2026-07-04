@@ -22,8 +22,8 @@ export function Navbar() {
         </nav>
 
         <div className="flex items-center gap-4">
-          <Link href="/dashboard" className={cn(buttonVariants({ variant: "ghost" }), "hidden sm:inline-flex")}>Log in</Link>
-          <Link href="/dashboard" className={buttonVariants()}>Get Started</Link>
+          <Link href="/login" className={cn(buttonVariants({ variant: "ghost" }), "hidden sm:inline-flex")}>Log in</Link>
+          <Link href="/signup" className={buttonVariants()}>Get Started</Link>
         </div>
       </div>
     </header>

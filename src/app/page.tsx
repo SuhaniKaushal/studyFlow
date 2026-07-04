@@ -25,8 +25,8 @@ export default function LandingPage() {
             Organize notes, revise efficiently, practice smarter and stay consistent with one modern study platform.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link href="/dashboard" className={cn(buttonVariants({ size: "lg" }), "w-full sm:w-auto gap-2 group")}>
-              Get Started <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            <Link href="/signup" className={cn(buttonVariants({ size: "lg" }), "w-full sm:w-auto gap-2 group")}>
+              Get Started Free<ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link href="#features" className={cn(buttonVariants({ size: "lg", variant: "outline" }), "w-full sm:w-auto")}>
               View Demo

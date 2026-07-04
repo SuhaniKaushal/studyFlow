@@ -1,4 +1,7 @@
+"use client"
+
 import Link from "next/link"
+import { toast } from "sonner"
 import { Layers } from "lucide-react"
 
 export function Footer() {
@@ -21,39 +24,39 @@ export function Footer() {
           <div>
             <h4 className="font-semibold mb-4">Product</h4>
             <ul className="space-y-3 text-sm text-text-secondary">
-              <li><Link href="#" className="hover:text-primary transition-colors">Features</Link></li>
-              <li><Link href="#" className="hover:text-primary transition-colors">Pricing</Link></li>
-              <li><Link href="#" className="hover:text-primary transition-colors">Changelog</Link></li>
-              <li><Link href="#" className="hover:text-primary transition-colors">Download</Link></li>
+              <li><Link href="#" onClick={(e) => { e.preventDefault(); toast.info("Features coming soon.") }} className="hover:text-primary transition-colors">Features</Link></li>
+              <li><Link href="#" onClick={(e) => { e.preventDefault(); toast.info("Pricing coming soon.") }} className="hover:text-primary transition-colors">Pricing</Link></li>
+              <li><Link href="#" onClick={(e) => { e.preventDefault(); toast.info("Changelog coming soon.") }} className="hover:text-primary transition-colors">Changelog</Link></li>
+              <li><Link href="#" onClick={(e) => { e.preventDefault(); toast.info("Download coming soon.") }} className="hover:text-primary transition-colors">Download</Link></li>
             </ul>
           </div>
           
           <div>
-            <h4 className="font-semibold mb-4">Company</h4>
+            <h4 className="font-semibold mb-4 text-text-primary">Company</h4>
             <ul className="space-y-3 text-sm text-text-secondary">
-              <li><Link href="#" className="hover:text-primary transition-colors">About</Link></li>
-              <li><Link href="#" className="hover:text-primary transition-colors">Blog</Link></li>
-              <li><Link href="#" className="hover:text-primary transition-colors">Careers</Link></li>
-              <li><Link href="#" className="hover:text-primary transition-colors">Contact</Link></li>
+              <li><Link href="#" onClick={(e) => { e.preventDefault(); toast.info("About page coming soon.") }} className="hover:text-primary transition-colors">About</Link></li>
+              <li><Link href="#" onClick={(e) => { e.preventDefault(); toast.info("Blog coming soon.") }} className="hover:text-primary transition-colors">Blog</Link></li>
+              <li><Link href="#" onClick={(e) => { e.preventDefault(); toast.info("Careers coming soon.") }} className="hover:text-primary transition-colors">Careers</Link></li>
+              <li><Link href="#" onClick={(e) => { e.preventDefault(); toast.info("Contact coming soon.") }} className="hover:text-primary transition-colors">Contact</Link></li>
             </ul>
           </div>
           
           <div>
-            <h4 className="font-semibold mb-4">Legal</h4>
+            <h4 className="font-semibold mb-4 text-text-primary">Legal</h4>
             <ul className="space-y-3 text-sm text-text-secondary">
-              <li><Link href="#" className="hover:text-primary transition-colors">Privacy Policy</Link></li>
-              <li><Link href="#" className="hover:text-primary transition-colors">Terms of Service</Link></li>
-              <li><Link href="#" className="hover:text-primary transition-colors">Cookie Policy</Link></li>
+              <li><Link href="#" onClick={(e) => { e.preventDefault(); toast.info("Privacy Policy coming soon.") }} className="hover:text-primary transition-colors">Privacy Policy</Link></li>
+              <li><Link href="#" onClick={(e) => { e.preventDefault(); toast.info("Terms of Service coming soon.") }} className="hover:text-primary transition-colors">Terms of Service</Link></li>
+              <li><Link href="#" onClick={(e) => { e.preventDefault(); toast.info("Cookie Policy coming soon.") }} className="hover:text-primary transition-colors">Cookie Policy</Link></li>
             </ul>
           </div>
         </div>
         
-        <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between text-sm text-text-tertiary">
-          <p>© {new Date().getFullYear()} StudyFlow. All rights reserved.</p>
-          <div className="flex gap-4 mt-4 md:mt-0">
-            <Link href="#" className="hover:text-text-primary transition-colors">Twitter</Link>
-            <Link href="#" className="hover:text-text-primary transition-colors">GitHub</Link>
-            <Link href="#" className="hover:text-text-primary transition-colors">Discord</Link>
+        <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-text-tertiary">
+          <p>© {new Date().getFullYear()} StudyFlow Inc. All rights reserved.</p>
+          <div className="flex items-center gap-6">
+            <Link href="#" onClick={(e) => { e.preventDefault(); toast.info("Opening Twitter...") }} className="hover:text-text-primary transition-colors">Twitter</Link>
+            <Link href="#" onClick={(e) => { e.preventDefault(); toast.info("Opening GitHub...") }} className="hover:text-text-primary transition-colors">GitHub</Link>
+            <Link href="#" onClick={(e) => { e.preventDefault(); toast.info("Opening Discord...") }} className="hover:text-text-primary transition-colors">Discord</Link>
           </div>
         </div>
       </div>
