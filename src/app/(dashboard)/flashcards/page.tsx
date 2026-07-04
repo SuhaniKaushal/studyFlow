@@ -15,19 +15,17 @@ const mockCards = [
 ]
 
 export default function FlashcardsPage() {
-  const { toggleFocusMode, isFocusMode } = useStudyStore()
+  const { toggleFocusMode, isFocusMode, flashcardStats, incrementFlashcardReview } = useStudyStore()
   
   const [currentCard, setCurrentCard] = useState(0)
-  const [reviewedCount, setReviewedCount] = useState(24) // Mock starting point
-  const totalGoal = 50
 
   const handleReview = (rating: string) => {
     if (currentCard < mockCards.length - 1) {
       setCurrentCard(prev => prev + 1)
-      setReviewedCount(prev => Math.min(prev + 1, totalGoal))
+      incrementFlashcardReview()
       toast(`Card marked as ${rating}`, { position: "top-center" })
     } else {
-      setReviewedCount(prev => Math.min(prev + 1, totalGoal))
+      incrementFlashcardReview()
       toast.success("Deck finished!", { icon: "🎉" })
       setTimeout(() => setCurrentCard(0), 1000) // reset for demo
     }
@@ -53,7 +51,7 @@ export default function FlashcardsPage() {
             {isFocusMode ? <LayoutTemplate className="w-4 h-4" /> : <EyeOff className="w-4 h-4" />}
             {isFocusMode ? "Exit Focus" : "Focus Mode"}
           </Button>
-          <Button className="gap-2 shadow-sm">
+          <Button className="gap-2 shadow-sm" onClick={() => toast.info("Deck creation wizard coming soon.")}>
             <Plus className="w-4 h-4" />
             Create Deck
           </Button>
@@ -67,9 +65,9 @@ export default function FlashcardsPage() {
         </div>
         <div className="flex-1">
           <h3 className="font-semibold mb-1">Daily Review Goal</h3>
-          <p className="text-sm text-text-secondary mb-3">You've reviewed {reviewedCount} out of {totalGoal} cards today.</p>
+          <p className="text-sm text-text-secondary mb-3">You've reviewed {flashcardStats.reviewedToday} out of {flashcardStats.totalGoal} cards today.</p>
           <div className="w-full max-w-md bg-background rounded-full h-2 border border-border overflow-hidden">
-            <div className="bg-primary h-full rounded-full transition-all duration-500 ease-out" style={{ width: `${(reviewedCount / totalGoal) * 100}%` }} />
+            <div className="bg-primary h-full rounded-full transition-all duration-500 ease-out" style={{ width: `${(flashcardStats.reviewedToday / flashcardStats.totalGoal) * 100}%` }} />
           </div>
         </div>
         <Button variant="outline" className="hidden sm:flex hover:bg-secondary">View Stats</Button>

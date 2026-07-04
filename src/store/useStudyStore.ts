@@ -49,6 +49,8 @@ export interface StudyStore {
   // Notes
   notes: Note[]
   addNote: (note: Note) => void
+  updateNoteSummary: (id: string, summary: string) => void
+  deleteNote: (id: string) => void
   toggleBookmark: (id: string) => void
   
   // Planner Tasks
@@ -57,9 +59,11 @@ export interface StudyStore {
   toggleTask: (id: string) => void
   deleteTask: (id: string) => void
 
-  // Quizzes
+  // Quizzes & Flashcards
   quizHistory: QuizAttempt[]
   addQuizAttempt: (attempt: QuizAttempt) => void
+  flashcardStats: { reviewedToday: number, totalGoal: number }
+  incrementFlashcardReview: () => void
 
   // Achievements
   achievements: string[]
@@ -93,6 +97,12 @@ export const useStudyStore = create<StudyStore>()(
 
       notes: recentNotes,
       addNote: (note) => set((state) => ({ notes: [note, ...state.notes] })),
+      updateNoteSummary: (id, summary) => set((state) => ({
+        notes: state.notes.map(n => n.id === id ? { ...n, summary } : n)
+      })),
+      deleteNote: (id) => set((state) => ({
+        notes: state.notes.filter(n => n.id !== id)
+      })),
       toggleBookmark: (id) => set((state) => ({
         notes: state.notes.map(n => n.id === id ? { ...n, bookmarked: !n.bookmarked } : n)
       })),
@@ -109,6 +119,14 @@ export const useStudyStore = create<StudyStore>()(
         { id: "q2", title: "React Fundamentals", score: 92, date: "3 days ago" },
       ],
       addQuizAttempt: (attempt) => set((state) => ({ quizHistory: [attempt, ...state.quizHistory] })),
+
+      flashcardStats: { reviewedToday: 24, totalGoal: 50 },
+      incrementFlashcardReview: () => set((state) => ({
+        flashcardStats: {
+          ...state.flashcardStats,
+          reviewedToday: Math.min(state.flashcardStats.reviewedToday + 1, state.flashcardStats.totalGoal)
+        }
+      })),
 
       achievements: [],
       unlockAchievement: (id) => set((state) => {

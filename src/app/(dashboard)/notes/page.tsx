@@ -23,7 +23,7 @@ import {
 } from "@/components/ui/dropdown-menu"
 
 function NotesContent() {
-  const { notes, addNote, toggleBookmark, unlockAchievement, incrementStudied } = useStudyStore()
+  const { notes, addNote, toggleBookmark, unlockAchievement, incrementStudied, updateNoteSummary, deleteNote } = useStudyStore()
   const [search, setSearch] = useState("")
   const [filterSubject, setFilterSubject] = useState<string>("All")
   
@@ -79,12 +79,14 @@ function NotesContent() {
     setTimeout(() => setSummaryState(prev => ({ ...prev, step: 2 })), 1500)
     setTimeout(() => setSummaryState(prev => ({ ...prev, step: 3 })), 3000)
     setTimeout(() => {
+      const mockSummary = "This document covers the fundamental principles of the topic. Key concepts include modularity, time-space tradeoffs, and standard optimization techniques. Recommended reading time: 15 mins."
       setSummaryState({ 
         id: null, 
         step: 0, 
-        result: "This document covers the fundamental principles of the topic. Key concepts include modularity, time-space tradeoffs, and standard optimization techniques. Recommended reading time: 15 mins."
+        result: mockSummary
       })
-      toast.success("Summary ready.")
+      updateNoteSummary(id, mockSummary)
+      toast.success("Summary generated & saved.")
       unlockAchievement("Fast Learner")
     }, 4500)
   }
@@ -187,11 +189,18 @@ function NotesContent() {
                         <DropdownMenuItem onClick={(e) => { e.stopPropagation(); toast("Link copied to clipboard.") }}>
                           <Share className="w-4 h-4 mr-2" /> Share
                         </DropdownMenuItem>
-                        <DropdownMenuItem onClick={(e) => e.stopPropagation()}>
+                        <DropdownMenuItem onClick={(e) => { e.stopPropagation(); toast.info("Rename coming soon.") }}>
                           <Edit2 className="w-4 h-4 mr-2" /> Rename
                         </DropdownMenuItem>
                         <DropdownMenuSeparator />
-                        <DropdownMenuItem onClick={(e) => e.stopPropagation()} className="text-error focus:text-error focus:bg-error/10">
+                        <DropdownMenuItem 
+                          onClick={(e) => { 
+                            e.stopPropagation(); 
+                            deleteNote(note.id);
+                            toast.success("Note deleted successfully.");
+                          }} 
+                          className="text-error focus:text-error focus:bg-error/10"
+                        >
                           <Trash2 className="w-4 h-4 mr-2" /> Delete
                         </DropdownMenuItem>
                       </DropdownMenuContent>

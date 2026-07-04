@@ -9,8 +9,8 @@ export function Providers({ children }: { children: React.ReactNode }) {
   return (
     <NextThemesProvider
       attribute="class"
-      defaultTheme="system"
-      enableSystem
+      defaultTheme="dark"
+      enableSystem={false}
       disableTransitionOnChange
     >
       <TooltipProvider delayDuration={300}>
@@ -20,12 +20,13 @@ export function Providers({ children }: { children: React.ReactNode }) {
         position="bottom-right" 
         toastOptions={{
           style: {
-            background: 'var(--color-background)',
-            color: 'var(--color-text-primary)',
-            border: '1px solid var(--color-border)',
+            background: 'rgba(24, 24, 27, 0.6)', /* Glass card */
+            backdropFilter: 'blur(12px)',
+            color: '#FAFAFA',
+            border: '1px solid rgba(16, 185, 129, 0.4)', /* Green success border */
             borderRadius: '12px',
           },
-          className: 'shadow-[0_4px_12px_rgba(0,0,0,0.05)]'
+          className: 'shadow-[0_8px_30px_rgb(0,0,0,0.12)]'
         }}
       />
     </NextThemesProvider>

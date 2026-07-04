@@ -1,23 +1,29 @@
 @import "tailwindcss";
 
 @theme {
-  /* Colors */
-  --color-background: #ffffff;
-  --color-secondary: #f8fafc;
-  --color-primary: #4f46e5;
-  --color-primary-foreground: #ffffff;
-  --color-accent: #3b82f6;
-  --color-success: #16a34a;
+  /* Premium SaaS Colors */
+  --color-background: #09090B;
+  --color-secondary: #111827;
+  --color-primary: #7c3aed; /* Violet/Purple */
+  --color-primary-foreground: #FAFAFA;
+  
+  --color-accent-purple: #8b5cf6;
+  --color-accent-blue: #3b82f6;
+  --color-accent-emerald: #10b981;
+  --color-accent-amber: #f59e0b;
+  
+  --color-success: #10b981;
   --color-warning: #f59e0b;
-  --color-error: #dc2626;
+  --color-error: #ef4444;
 
-  /* Text Colors (Gray Scale) */
-  --color-text-primary: #111827; /* Gray 900 */
-  --color-text-secondary: #4b5563; /* Gray 600 */
-  --color-text-tertiary: #9ca3af; /* Gray 400 */
+  /* Text Colors */
+  --color-text-primary: #FAFAFA;
+  --color-text-secondary: #9CA3AF;
+  --color-text-tertiary: #52525b;
 
-  /* Border Colors */
-  --color-border: #e2e8f0; /* Slate 200 */
+  /* Card & Borders */
+  --color-card: #18181B;
+  --color-border: rgba(255, 255, 255, 0.08); /* Slightly more visible than 0.06 for definition */
 
   /* Border Radius */
   --radius-default: 12px;
