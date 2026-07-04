@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 @theme {
-  /* Natural Hand-Coded SaaS Colors (Slate) */
-  --color-background: #0f172a; /* slate-900 */
-  --color-card: #1e293b; /* slate-800 */
-  --color-secondary: #334155; /* slate-700 */
-  --color-primary: #2563eb; /* blue-600 */
+  /* Clean Light SaaS Colors (from image) */
+  --color-background: #f0f4fd; /* Soft blue-tinted background */
+  --color-card: #ffffff; /* Pure white cards */
+  --color-secondary: #f1f5f9; /* Soft muted gray for secondary elements */
+  --color-primary: #5f81ff; /* Bright periwinkle/indigo accent */
   --color-primary-foreground: #ffffff;
   
   --color-accent-purple: #8b5cf6;
@@ -18,12 +18,12 @@
   --color-error: #ef4444;
 
   /* Text Colors */
-  --color-text-primary: #f8fafc; /* slate-50 */
-  --color-text-secondary: #94a3b8; /* slate-400 */
-  --color-text-tertiary: #64748b; /* slate-500 */
+  --color-text-primary: #0f172a; /* Deep navy for readable text */
+  --color-text-secondary: #64748b; /* Muted gray */
+  --color-text-tertiary: #94a3b8; /* Lighter gray */
 
   /* Borders */
-  --color-border: #334155; /* slate-700 */
+  --color-border: #e2e8f0; /* Subtle borders */
 
   /* Border Radius */
   --radius-default: 12px;
