@@ -37,21 +37,8 @@ Modern students are overwhelmed by disjointed tools—using one app for notes, a
 
 ---
 
-## 📸 Screenshots
 
-| Landing Page | Dashboard |
-|:---:|:---:|
-| <!-- Placeholder: ![Landing Page](docs/landing.png) --> _Coming Soon_ | <!-- Placeholder: ![Dashboard](docs/dashboard.png) --> _Coming Soon_ |
 
-| Notes | Quiz |
-|:---:|:---:|
-| <!-- Placeholder: ![Notes](docs/notes.png) --> _Coming Soon_ | <!-- Placeholder: ![Quiz](docs/quiz.png) --> _Coming Soon_ |
-
-| Planner | Flashcards |
-|:---:|:---:|
-| <!-- Placeholder: ![Planner](docs/planner.png) --> _Coming Soon_ | <!-- Placeholder: ![Flashcards](docs/flashcards.png) --> _Coming Soon_ |
-
----
 
 ## 🚀 Live Demo
 
